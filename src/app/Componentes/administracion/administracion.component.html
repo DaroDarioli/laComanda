@@ -1,0 +1,111 @@
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+  crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+  crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+  crossorigin="anonymous">
+
+<!-- cierra externas necesarias bootstrap-->
+
+<!-- Llamada a navPan -->
+
+<app-nav [show]="show" [showMesas]="showMesas" [showPedidos]="showPedidos"></app-nav>
+
+<!-- Región modales -->
+
+<div id="modalAdmin" class="modal">
+  <span onclick="document.getElementById('modalAdmin').style.display='none'" class="close" title="Close Modal">×</span>
+
+  <form class="modal-content animate">
+    <div class="container" id="contenidoModal"> </div>
+    <google-chart [data]="pieChartData"></google-chart>
+    <div class="clearfix">
+      <a type="button" class="btn" onclick="document.getElementById('modalAdmin').style.display='none'">Cerrar</a>
+    </div>
+  </form>
+
+</div>
+
+
+<div id="modalChart" class="modal">
+  <span onclick="document.getElementById('modalChart').style.display='none'" class="close" title="Close Modal">×</span>
+  <form class="modal-content animate">
+    <div [chart]="chart"></div>
+  </form>
+</div>
+
+
+<div class="container" id="moduloCaptchaGoogle">
+  <span onclick="document.getElementById('moduloCaptchaGoogle').style.display='none'" class="close" title="Cerrar">×</span>
+  <h1>Captcha google</h1>
+
+  <re-captcha (resolved)="resolved($event)" siteKey="6LfsPX0UAAAAAMcDF8BPY_uc7a_lBp17pRqo0SZc"></re-captcha>
+
+</div>
+
+
+<div id="moduloCaptcha" class="modal">
+  <span onclick="document.getElementById('moduloCaptcha').style.display='none'" class="close" title="Close Modal">×</span>
+
+  <form class="modal-content animate">
+    <h3 id="mensajeForm">{{mensajeCaptcha}}</h3>
+    <div >
+      <img [src]="sourceSuma" alt="Avatar" class="avatar" width="300" height="100">
+    </div>
+    <div class="row" id="rowRespuestas">
+
+      <img type="button" src="./../../../assets/captchaSuma/res5.jpg" width="90" height="90" id="resa" (click)="clickRespuesta($event)"
+        class="imgcontainerRespuesta">
+      <img type="button" src="./../../../assets/captchaSuma/res6.jpg" width="90" height="90" id="resb" (click)="clickRespuesta($event)"
+        class="imgcontainerRespuesta">
+      <img type="button" src="./../../../assets/captchaSuma/res7.jpg" width="90" height="90" id="resc" (click)="clickRespuesta($event)"
+        class="imgcontainerRespuesta">
+
+    </div>
+
+    <div class="clearfix">
+      <a type="button" class="btnAnimado" onclick="document.getElementById('moduloCaptcha').style.display='none'">Cancelar</a>
+    </div>
+  </form>
+
+</div>
+
+
+<!-- Línea de botones principales -->
+
+<div class="row" id="rowAdmin">
+
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" id="btnDropDownOperaciones" data-toggle="dropdown">Informes
+      Graficos <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a (click)="mostrarGraficoOperaciones()">Operaciones por sector</a></li>
+    </ul>
+  </div>
+
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" id="btnDropDown" data-toggle="dropdown">Planillas
+      de EXCEL
+      <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a (click)="traerTransaccionesEmpleados()">Informe Logueos</a></li>
+      <li><a (click)="listadoProductos()">Listado Productos</a></li>
+      <li><a href="#">Informe Tareas por sector</a></li>
+    </ul>
+  </div>
+
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" id="btnDropDownABM" data-toggle="dropdown">ABMs
+      <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a (click)="abmEmpleados()">ABM Empleados</a></li>
+      <li><a (click)="abmProductos()">ABM Productos</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- fin línea de botones principales -->

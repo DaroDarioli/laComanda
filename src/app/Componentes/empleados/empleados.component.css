@@ -1,0 +1,73 @@
+#tablaEmpleados{
+    border-radius: 2%;
+}
+
+.contenidoModal{
+    color:black;
+    text-align: center;
+
+  }
+
+  .contenidoModalChico{
+    color:black;
+    text-align: center;
+    width: 70%;
+
+  }
+
+  .contenidoHeader{
+    /* color:black; */
+    text-align: center;
+    font-size: 15px;
+
+  }
+
+
+
+button {
+    background: rgb(146, 132, 7);
+    color: #ccc;
+    width: 220px;
+    height: 60px;
+    border: 0;
+    font-size: 18px;
+    border-radius: 4px;
+    font-family: 'Raleway', sans-serif;
+    transition: .6s;
+    overflow: hidden;
+    /* margin: 5%; */
+    margin: 0% 0% 1% 0%;
+    /* padding: 5%; */
+  }
+
+  .btnOpcion {
+    background:#5cb85c;
+    color: #ccc;
+    width: 100px;
+    height: 30px;
+    border: 0;
+    font-size: 18px;
+    border-radius: 4px;
+    font-family: 'Raleway', sans-serif;
+    transition: .6s;
+    overflow: hidden;
+    /* margin: 5%; */
+    margin: 0% 0% 1% 0%;
+    /* padding: 5%; */
+  }
+
+  .btnTabla {
+    background: rgb(146, 132, 7);
+    color: #ccc;
+    width: 100px;
+    height: 30px;
+    border: 0;
+    font-size: 18px;
+    border-radius: 4px;
+    font-family: 'Raleway', sans-serif;
+    transition: .6s;
+    overflow: hidden;
+    /* margin: 5%; */
+    margin: 0% 0% 1% 0%;
+    /* padding: 5%; */
+  }

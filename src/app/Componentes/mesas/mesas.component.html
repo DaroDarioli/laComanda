@@ -1,0 +1,192 @@
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+<link rel="stylesheet" href="//brick.a.ssl.fastly.net/Roboto:400" />
+
+<app-nav [esPanelAdmin]="esPanelAdmin" [showMesas]= "showMesas" [showPedidos]="showPedidos"></app-nav>
+
+
+<!-- <app-nav [esPanelAdmin]="esPanelAdmin"></app-nav> -->
+
+<!-- <div id="divPrincipal" class="row"> -->
+
+<div id="moduloMesas" class="col-12">
+    <div class="row">
+        <button (click)="accionMesa($event)" type="button" id="10001" class="btnGrande">Mesa no Identificada</button>
+        <button (click)="accionMesa($event)" type="button" id="10002" class="btnGrande">Mesa no Identificada</button>
+        <button (click)="accionMesa($event)" type="button" id="10003" class="btnGrande">Mesa no Identificada</button>
+    </div>
+    <div class="row">
+        <button (click)="accionMesa($event)" type="button" id="20001" class="btnGrande">Mesa no Identificada</button>
+        <button (click)="accionMesa($event)" type="button" id="20002" class="btnGrande">Mesa no Identificada</button>
+        <button (click)="accionMesa($event)" type="button" id="20003" class="btnGrande">Mesa no Identificada</button>
+    </div>
+    <div class="row">
+        <button (click)="accionMesa($event)" type="button" id="30001" class="btnGrande">Mesa no Identificada</button>
+        <button (click)="accionMesa($event)" type="button" id="30002" class="btnGrande">Mesa no Identificada</button>
+        <button (click)="accionMesa($event)" type="button" id="30003" class="btnGrande">Mesa no Identificada</button>
+    </div>
+    <div class="row">
+        <button (click)="accionMesa($event)" type="button" id="40001" class="btnGrande">Mesa no Identificada</button>
+        <button (click)="accionMesa($event)" type="button" id="40002" class="btnGrande">Mesa no Identificada</button>
+        <button (click)="accionMesa($event)" type="button" id="40003" class="btnGrande">Mesa no Identificada</button>
+    </div>
+</div>
+
+<div id="divAlerta" class="alert alert-warning alert-dismissible fade show" role="alert">
+    <p>{{mensajeAlerta}}</p>
+    <button type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button> -->
+</div>
+
+
+<div id="modalMesas" class="modal">
+        <span onclick="document.getElementById('modalMesas').style.display='none'" class="close" title="Close Modal">×</span>
+        <div class="modal-content animate">
+    
+                <table class="table table-hover table-dark">
+                    <thead>
+                    <tr>
+                        <td>
+                            <h3>Mesa: {{mesaActual}}</h3>
+                        </td>    
+                        <td> 
+                            <input name="idCliente" type="number" class="form-control" placeholder="Ingresar Cliente">
+                        </td>
+    
+                    </tr>
+    
+                    <tr>
+                        <td>
+                            <h3><strong>Producto</strong></h3>
+                        </td>
+                        <td>
+                            <h3><strong>Precio</strong></h3>
+                        </td>
+                        <td>
+                            <h3><strong>Cantidad</strong></h3>
+                        </td>
+                    </tr>
+                </thead>
+    
+                <tbody>
+                    <tr *ngFor="let producto of listadoProductos">
+    
+                        <td>
+                            <button class="btn btn-info btn-lg" disabled>{{producto.nombre_producto}}</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-info btn-lg" disabled>{{producto.precio}}</button>
+                        </td>
+    
+                        <td>
+    
+                            <input [(ngModel)]="producto.cantidad" name="producto.cantidad" type="number" class="form-control"
+                                id="inputCantidades" placeholder="Cantidad">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    
+    
+    
+            <!-- <div class="container" id="contenidoModal"> </div> -->
+            <div class="clearfix">
+                <a type="button" class="btn" (click)="cargarProductos()">Enviar</a>
+                <a type="button" class="btn" onclick="document.getElementById('modalMesas').style.display='none'">Cancelar</a>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <div id="modalAviso" class="modal">
+        <span onclick="document.getElementById('modalAviso').style.display='none'" class="close" title="Close Modal">×</span>
+        <div class="modal-content animate" id="contenidoModal">
+    
+            <div id="divAlerta" *ngIf="showAlerta" class="alert alert-danger">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <p>{{mensajeAlerta}}</p>
+            </div>
+    
+            <div>
+                <a type="button" class="btn" *ngIf="show" (click)="cerrarMesa()">Cerrar Mesa: {{mesaActual}}</a>
+            </div>
+    
+            <div>
+                <a type="button" class="btn" onclick="document.getElementById('modalAviso').style.display='none'">Cancelar</a>
+            </div>
+        </div>
+    
+    </div>
+
+<div id="moduloPedidos" class="modal">
+    <span onclick="document.getElementById('moduloPedidos').style.display='none'" class="close" title="Close Modal">×</span>
+    <div class="modal-content animate" id="contenidoModal">
+        <div>
+            <button type="button" id="btnClientesComiendo" class="btn" data-toggle="modal" data-target="#exampleModal"
+                (click)="cambiarMesaAClientesComiendo()">Pasar estado a clientes comiendo</button>
+        </div>
+        <div>
+            <button type="button" id="btnModificarPedido" class="btn" data-toggle="modal" data-target="#exampleModal"
+                (click)="modificarPedido()">Modificar Pedido</button>
+        </div>
+        <div>
+            <a type="button" class="btn" onclick="document.getElementById('moduloPedidos').style.display='none'">Cancelar</a>
+        </div>
+    </div>
+</div>
+
+
+<div id="moduloClientesPagando" class="modal">
+    <span onclick="document.getElementById('moduloClientesPagando').style.display='none'" class="close" title="Close Modal">×</span>
+    <div class="modal-content animate" id="contenidoModal">
+        <div>
+            <button type="submit" id="clientesPagando" class="btn" (click)="informarPidieronCuenta()">
+                Informar que pidieron la cuenta</button>
+        </div>
+        <div>
+            <a type="button" class="btn" onclick="document.getElementById('moduloClientesPagando').style.display='none'">Cancelar</a>
+        </div>
+    </div>
+</div>
+
+<!-- 
+<div class="container" id="moduloModificarPedido">
+    <label>Modificar Pedido mesa:</label>
+    <h4 id="mesaActualStr"></h4>
+
+    <label for="exampleFormControlSelect1" id="elegirprodStr">Elegir producto</label>
+    <select class="form-control" id="pedidoSelect"></select>
+
+    <label>Cantidad:</label><br>
+    <input type="number" min="0" class="form-control" id="cantidadPedidoStr"><br>
+
+    <button type="submit" id="agregarPedido" class="btn btn-primary">Agregar Pedido</button>
+
+    <div class="container">
+        <table class="table table-hover" id="tabla_modificar_pedidos"></table>
+    </div>
+    <button type="button" class="btn btn-danger" id="btnCerrarModificarPedido">Cerrar</button>
+</div> -->
+
+
+<div id="loading">
+    <div class="loader"></div>
+</div>
+<!-- 
+<form class="modal-content animate" id="moduloProductos">
+    <span onclick="document.getElementById('moduloProductos').style.display='none'" class="close" title="Close Modal">×</span>
+    <ul>
+        <li *ngFor="let producto of listadoProductos">
+            <form class="form-inline">
+                <button type="button" class="btn btn-info btn-lg">{{producto.nombre_producto}}</button>
+
+            </form>
+        </li>
+    </ul>
+    <!-- <button type="button" class="btn btn-info btn-lg">{{producto.nombre_producto}}</button> 
+    </form> -->

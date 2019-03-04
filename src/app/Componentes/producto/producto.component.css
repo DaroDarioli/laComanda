@@ -1,0 +1,53 @@
+/* body{
+  background-image: url("../../../assets/IMG/fondoEnchiladas2.png");
+} */
+
+
+#divPrincipal {
+  /* background-image: url("../../../assets/IMG/fondoEnchiladas2.png"); */
+  height: 100%;
+  width: 100%;
+
+}
+
+
+.col-md-12{
+  background-color:rgba(4, 87, 32, 0.9);    
+  /* height: 150px;  */
+  /* width: 90%; */
+  text-align:center;
+  /* margin:1px; */
+  /* border-radius: 3%; */
+  border: solid gray 3px;
+  /* min-width: 100vh; */
+  /* font-size: 15px; */
+/* 
+    text-decoration-color: white;        
+    left:0px;
+    top:0px;
+   */   
+  }
+
+  .imagen{
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+
+  .divFoto{
+    height: 70px;
+   width: 70px;
+  }
+
+  .componenteModal{
+    padding: 5px;
+    font-size: 20px;
+    border-radius:5%;    
+    margin:1%;
+  }
+
+
+
+  /* librerias */
+
+  

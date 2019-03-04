@@ -1,0 +1,86 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+<!-- <div id="divPrincipal"> -->
+<div id="modalAviso" class="modal">
+    <span onclick="document.getElementById('modalAviso').style.display='none'" class="close" title="Close Modal">×</span>
+    <div class="modal-content animate" id="contenidoModal">
+
+        <div id="divAlerta" *ngIf="showAlerta" class="alert alert-danger">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <p>{{mensajeAlerta}}</p>
+        </div>
+
+        <div>
+            <a type="button" class="btn" *ngIf="show" (click)="cerrarMesa()">Cerrar Mesa: {{mesaActual}}</a>
+        </div>
+
+        <div>
+            <a type="button" class="btn" onclick="document.getElementById('modalAviso').style.display='none'">Cancelar</a>
+        </div>
+    </div>
+
+</div>
+
+<div id="modalPedido" class="modal">
+    <span onclick="document.getElementById('modalPedido').style.display='none'" class="close" title="Close Modal">×</span>
+    <div class="modal-content animate">
+
+        <input [(ngModel)]="tiempoEstimado" name="tiempoEstimado" type="number" class="form-control" placeholder="Tiempo estimado en minutos">
+
+
+        <!-- <div class="container" id="contenidoModal"> </div> -->
+        <div class="clearfix">
+            <a type="button" class="btn" (click)="tomarPedido()">Enviar</a>
+            <a type="button" class="btn" onclick="document.getElementById('modalPedido').style.display='none'">Cancelar</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+<tr>
+    <td>
+        <label class="componenteModal">Producto</label>
+    </td>
+    <td>
+        <input class="contenidoModal" [(ngModel)]="pedido.nombre_producto" name="pedido.nombre_producto">
+    </td>
+    <td>
+        <label class="componenteModal">Cantidad</label>
+    </td>
+    <td>
+        <input class="contenidoModal" [(ngModel)]="pedido.cantidad_producto" name="pedido.cantidad_producto">
+    </td>
+    <td>
+        <select class="btnPedido" [(ngModel)]="pedido.estado_pedido" name="pedido.estado_pedido">{{pedido.estado_pedido}}
+            <option [value]=1>Pendiente</option>
+            <option [value]=2>En Preparacion</option>
+            <option [value]=3>Listo para servir</option>
+        </select>
+    </td>
+    <td>
+        <label class="componenteModal">Hora Alta</label>
+    </td>
+    <td>
+        <input class="contenidoModal" [(ngModel)]="pedido.hora_alta" name="pedido.hora_alta">
+
+    </td>
+    <td>
+        <label class="componenteModal">Hora Estimada</label>
+    </td>
+    <td>
+        <input class="contenidoModal" [(ngModel)]="pedido.hora_estimada" name="pedido.hora_estimada">
+    </td>
+    <td>
+        <button class="btnPedido" name="pedido" (click)="modificarPedido(pedido)">Modificar
+        </button>
+    </td>
+</tr>

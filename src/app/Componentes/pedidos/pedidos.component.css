@@ -1,0 +1,47 @@
+#divPrincipal {
+ background-image: url("../../../assets/IMG/fondoEnchiladas2.png");
+    /* height: 100%; */
+    width: 100%;
+
+ }
+
+/* 
+ #formPedidos{
+    width: 40%;
+    margin: 0% 30% 0% 30%;
+    background-color: aliceblue;
+    border-radius: 5%;
+    display:none;
+    text-align:center;
+    
+} */
+
+#btnPedidosSector{
+    margin: 3%;    
+    /* background-color: rgb(10, 78, 7); */
+} 
+
+
+
+#btnMisPedidos{
+    margin: 3%;     
+    /* background-color: rgb(10, 78, 7); */
+}
+
+
+
+button {
+    background: rgb(146, 132, 7);
+    color: #ccc;
+    width: 220px;
+    height: 60px;
+    border: 0;
+    font-size: 18px;
+    border-radius: 4px;
+    font-family: 'Raleway', sans-serif;
+    transition: .6s;
+    overflow: hidden;
+    /* margin: 5%; */
+    margin: 0% 5% 0% 5%;  
+    /* padding: 25%; */
+  }

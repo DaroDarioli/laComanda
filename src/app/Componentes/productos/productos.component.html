@@ -1,0 +1,38 @@
+<div id="divPrincipal">
+
+  <h3>
+    Productos
+  </h3>
+
+  <button type="button" id="btnAlta" (click)="altaProducto()">Alta Producto</button>
+
+  <div id="listadoProductos">
+    <!-- <app-producto *ngFor="let producto of listadoProductos" [producto]="producto" [foto]="producto.imagen"[name]="producto.nombre_producto"> -->
+      <app-producto *ngFor="let producto of listadoProductos" [producto]="producto" [esAlta]="esAlta" >
+  </app-producto>
+  </div>
+</div>
+
+
+<!--
+<form id="divAlta">
+  <label class="componenteModal">Producto</label>
+  <input class="componenteModal" [(ngModel)]="producto.nombre_producto" name="producto.nombre_producto">
+
+  <label class="componenteModal">Precio</label>
+  <input class="componenteModal" [(ngModel)]="producto.precio" name="producto.precio">
+
+  <label class="componenteModal">Descripcion</label>
+  <input class="componenteModal" [(ngModel)]="producto.descripcion" name="producto.descripcion">
+
+  <select class="componenteModal" [(ngModel)]="producto.id_cocina" name="producto.id_cocina">{{producto.id_cocina}}
+      <option [value]=1>Barra</option>
+      <option [value]=2>Choppera</option>
+      <option [value]=3>Cocina</option>
+      <option [value]=4>Candy Bar</option>
+  </select>
+
+  <button class="componenteModal" (click)="modificarProducto(producto)">Modificar
+  </button>
+
+</form> -->

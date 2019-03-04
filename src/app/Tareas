@@ -1,0 +1,31 @@
+Tareas:
+
+#Arreglar navpan:
+
+
+-sacar opciones y dejar acceso a página admin;
+-no mostrar acceso a página admin cuando está en página admin
+-mostrar acceso a mesas cuando está en mesas y visceversa
+
+#Arreglar funcionamiento de mesas:
+
+-todas las funciones y de forma estandarizada
+
+
+#Arreglar ABMs:
+-productos
+-empleados
+-manejo de imágenes
+
+#Agregar ver PDF
+
+#listado de pedidos
+-traer mi sector
+-tomar pedido
+
+#Ver aviso de pedido listo
+
+#Ver funcionamiento del token
+
+#Ver partes Clientes
+

@@ -1,0 +1,38 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:300);
+
+@import url(https://fonts.googleapis.com/css?family=Architects+Daughter);
+
+#navPan{
+    background-image: linear-gradient(to right,gray , black);
+    width: 75%;
+    float:top;
+    height: 40px;
+    border-radius: 10%;
+    /* margin: 1%; */
+    border: black 2px solid;
+    /* display:none; */
+  
+  }
+
+  .navbar-brand{
+    font-family: 'Architects Daughter', cursive;
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.829);
+  
+  }
+
+  #navbarText{
+    margin: 0px 100px 0px 150px;
+    font-size: 15px;
+  }
+
+  #btnNavUsuario{
+    font-size: 17px;
+    color: black;
+    margin: 0px 0px 0px 100px;
+
+  }
+
+ #btnSalir{
+    margin: 0px 0px 0px 100px;
+  }

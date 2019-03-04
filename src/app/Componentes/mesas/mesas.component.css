@@ -1,0 +1,346 @@
+
+#divPrincipal {
+    /* background-image: url("../../../assets/IMG/fondoEnchiladas2.png"); */
+    /* height: 100%; */
+    /* width: 100%; */
+    margin: 1% 2% 0% 0%;
+ }
+
+#moduloProductos{
+  display:none;
+  width: 40%;
+  background-color: blue;
+}
+
+.cabeceraModulo{
+  border-bottom-style: solid 2px black;  
+  padding: 0% 15% 0% 15%;
+  font-style: bold;
+  /* width: 25%; 
+  height: 50px;
+  border-radius: 5%;
+  color:white;   */
+}
+
+.form-control{
+  padding: 1%;
+}
+
+#inputCliente{
+  width: 25%; 
+  height: 50px;
+  font-size: 40px;
+  text-align: center;
+}
+
+#divAdmin{
+  background-color: #006600;
+  border:gray 2px solid;
+  /* width: 25%; */
+  /* height:70px; */
+  border-radius: 10%;
+  /* margin: 0.01%; */
+  /* padding: 3%; */
+}
+
+
+.btnGrande{
+    /* background-color: hsl(245, 74%, 25%);  */
+    color:gray;
+    width: 25%;
+    /* height:70px; */
+    border-radius: 10%;
+    margin: 2%;
+    padding: 3%;
+    font: gray 5px;
+
+}
+
+.btnGrande.mesaEsperando{
+    background-color: #ff0000;
+}
+
+.btnGrande.mesaComiendo{
+    background-color: #3d3da0;
+}
+
+.btnGrande.mesaPagando{
+    background-color: #ff9900;
+}
+
+.btnGrande.mesaLibre{
+    background-color: #006600;
+}
+
+/* modal */
+
+#mensajeModal{
+    font-family: 'Gloria Hallelujah', cursive;
+    text-align: center;
+  }
+
+  /* Set a style for all buttons */
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn,.signupbtn {float:left;width:50%}
+
+/* Add padding to container elements */
+.container {
+    padding: 16px;
+}
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 98%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+.clearfix {
+  margin: 0% 0% 0% 30%;
+}
+
+#moduloPedidos{
+  display:none;
+}
+
+#moduloModificarPedido{
+  display:none;
+}
+
+#moduloCerrarMesa{
+  display:none;
+}
+
+#moduloClientesPagando{
+  display:none;
+}
+
+/* botones */
+
+
+.btn {
+    margin: 2% 3%;
+  width: 300px;
+  height: 50px;
+  line-height: 50px;
+  background-color: #4CAF50;;
+  border-radius: 8px;
+  color: #fff;
+  font-family: 'Indie Flower', cursive;
+  font-size: 18px;
+  font-weight: normal;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transform: translateY(-6px);
+  -ms-transform: translateY(-6px);
+  transform: translateY(-6px);
+  -webkit-animation-name: hover;
+  animation-name: hover;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+.btn:before {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  content: '';
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: -webkit-transform, opacity;
+  transition-property: transform, opacity;
+  opacity: .4;
+  -webkit-transform: translateY(6px);
+  -ms-transform: translateY(6px);
+  transform: translateY(6px);
+  -webkit-animation-name: hover-shadow;
+  animation-name: hover-shadow;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+.btn:hover {
+  background-color: #e16e50;
+}
+
+
+.btn {
+    margin: 2% 3%;
+  width: 300px;
+  height: 50px;
+  line-height: 50px;
+  background-color: #4CAF50;;
+  border-radius: 8px;
+  color: #fff;
+  font-family: 'Indie Flower', cursive;
+  font-size: 18px;
+  font-weight: normal;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: transform;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transform: translateY(-6px);
+  -ms-transform: translateY(-6px);
+  transform: translateY(-6px);
+  -webkit-animation-name: hover;
+  animation-name: hover;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+@keyframes hover {
+  50% {
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    transform: translateY(-3px);
+  }
+  100% {
+    -webkit-transform: translateY(-6px);
+    -ms-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+}
+@-webkit-keyframes hover-shadow {
+  0% {
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);
+    opacity: .4;
+  }
+  50% {
+    -webkit-transform: translateY(3px);
+    transform: translateY(3px);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);
+    opacity: .4;
+  }
+}
+@keyframes hover-shadow {
+  0% {
+    -webkit-transform: translateY(6px);
+    -ms-transform: translateY(6px);
+    transform: translateY(6px);
+    opacity: .4;
+  }
+  50% {
+    -webkit-transform: translateY(3px);
+    -ms-transform: translateY(3px);
+    transform: translateY(3px);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(6px);
+    -ms-transform: translateY(6px);
+    transform: translateY(6px);
+    opacity: .4;
+  }
+}
+@-webkit-keyframes hover {
+  50% {
+    -webkit-transform: translateY(-3px);
+    transform: translateY(-3px);
+  }
+  100% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+}
+@keyframes hover {
+  50% {
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    transform: translateY(-3px);
+  }
+  100% {
+    -webkit-transform: translateY(-6px);
+    -ms-transform: translateY(-6px);
+    transform: translateY(-6px);
+}
+}

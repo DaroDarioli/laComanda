@@ -1,0 +1,71 @@
+<div class="container">
+  <h3 id="altaH3">Alta Empleado</h3>
+  <form #empleadoForm="ngForm">
+
+    <div class="form-group">
+      <input type="text" class="form-control" id="nombre" required [(ngModel)]="empleado.nombre_completo" name="nombre"
+        placeholder="Nombre completo" #nombre="ngModel">
+    </div>
+    <div [hidden]="nombre.valid || nombre.pristine" class="alert alert-danger">
+      El nombre es obligatorio
+    </div>
+
+    <div class="form-group">
+      <input type="text" class="form-control" id="usuario" required [(ngModel)]="empleado.usuario" name="usuario"
+        placeholder="usuario" #usuario="ngModel">
+    </div>
+    <div [hidden]="usuario.valid || usuario.pristine" class="alert alert-danger">
+      El usuario es obligatorio
+    </div>
+
+    <div class="form-group">
+      <select class="form-control" id="power" required [(ngModel)]="empleado.id_rol" name="rol">
+        <option [value]=1>Socio</option>
+        <option [value]=2>Mesero</option>
+        <option [value]=3>Bartender</option>
+        <option [value]=4>Cervecero</option>
+        <option [value]=5>Cocinero</option>
+        <option [value]=6>Pastelera</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <input type="text" class="form-control" id="clave" required [(ngModel)]="empleado.clave" name="clave" #clave="ngModel"
+        placeholder="clave">
+    </div>
+    <div [hidden]="clave.valid || clave.pristine" class="alert alert-danger">
+      La clave de acceso es obligatoria
+    </div>
+
+    <div class="form-group">
+      <input type="number" class="form-control" id="sueldo" required [(ngModel)]="empleado.sueldo" name="sueldo"
+        placeholder="sueldo" #sueldo="ngModel">
+    </div>
+    <div [hidden]="sueldo.valid || sueldo.pristine" class="alert alert-danger">
+      Es necesario determinar el sueldo
+    </div>
+
+    <div class="form-group">
+      <input type="date" class="form-control" id="ingreso" required [(ngModel)]="empleado.fecha_ingreso" name="ingreso"
+        placeholder="ingreso" #ingreso="ngModel">
+    </div>
+    <div [hidden]="ingreso.valid || ingreso.pristine" class="alert alert-danger">
+      La fecha de ingreso es necesaria
+    </div>
+
+
+    <div class="form-group">
+      <input type="date" class="form-control" id="egreso" required [(ngModel)]="empleado.fecha_egreso" name="sueldo"
+        placeholder="Fecha de egreso" #egreso="ngModel">
+    </div>
+    <div [hidden]="egreso.valid || egreso.pristine" class="alert alert-danger">
+      La fecha de egreso es necesaria
+    </div>
+
+
+    <button type="submit" class="btn btn-success" (click)="altaEmpleado()">Cargar Empleado</button>
+
+    <button type="submit" class="btn btn-success">Limpiar Formulario</button>
+
+  </form>
+</div>

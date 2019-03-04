@@ -1,0 +1,58 @@
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+<link rel="stylesheet" href="//brick.a.ssl.fastly.net/Roboto:400" />
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+  crossorigin="anonymous"></script>
+
+
+
+
+  <td scope="row">{{empleado.id_empleado}}
+  </td>
+  <td>
+    <input class="contenidoModal" [(ngModel)]="empleado.usuario" name="empleado.usuario">
+  </td>
+  <td>
+    <input class="contenidoModal" [(ngModel)]="empleado.clave" name="empleado.clave">
+  </td>
+  <td>
+    <input class="contenidoModal" [(ngModel)]="empleado.nombre_completo" name="empleado.nombre_completo">
+  </td>
+  <td>
+    <input class="contenidoModal" [(ngModel)]="empleado.fecha_ingreso" name="empleado.fecha_ingreso">
+  </td>
+  <td>
+    <!-- <label class="componenteModal">Rol</label> -->
+    <select class="contenidoModal" [(ngModel)]="empleado.id_rol" name="empleado.id_rol">Rol
+      <option [value]=1>Socio</option>
+      <option [value]=2>Mesero</option>
+      <option [value]=3>Bartender</option>
+      <option [value]=4>Cervecero</option>
+      <option [value]=5>Cocinero</option>
+      <option [value]=6>Pastelera</option>
+    </select>
+  </td>
+  <td>
+    <!-- <label class="componenteModal">Rol</label> -->
+    <select class="contenidoModal" [(ngModel)]="empleado.activo" name="empleado.activo">Rol
+      <option [value]=1>Habilidado</option>
+      <option [value]=0>Deshabilitado</option>
+    </select>
+  </td>
+  <td>
+    <button class="btn btn-success my-2 my-sm-0" (click)="accionEmpleado(empleado)">Modificar
+    </button>
+
+  </td>
+
+  <td>
+    <button class="btn btn-success my-2 my-sm-0" (click)="borrarEmpleado(empleado)">Eliminar
+    </button>
+
+  </td>
